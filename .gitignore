@@ -1,0 +1,7 @@
+# avoid uploading keys
+key/*
+
+venv
+
+.idea
+
