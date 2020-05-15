@@ -30,7 +30,8 @@ import os
 from pathlib import Path
 
 
-BOTAN_BINARY_DIR = os.path.join(Path(__file__).parent.parent, 'bin/libbotan-2-ubuntu-64.so')
+BOTAN_BINARY_DIR_LINUX = os.path.join(Path(__file__).parent.parent, 'bin/libbotan-2-ubuntu-64.so')
+BOTAN_BINARY_DIR_WS = os.path.join(Path(__file__).parent.parent, 'bin/botan-windows-64.dll')
 BOTAN_FFI_VERSION = 20191214
 
 #
@@ -58,14 +59,15 @@ class BotanException(Exception):
 def _load_botan_dll(expected_version):
 
     possible_dll_names = []
-    possible_dll_names.append(BOTAN_BINARY_DIR)
 
     if platform in ['win32', 'cygwin', 'msys']:
+        possible_dll_names.append(BOTAN_BINARY_DIR_WS)
         possible_dll_names.append('botan.dll')
     elif platform in ['darwin', 'macos']:
         possible_dll_names.append('libbotan-2.dylib')
     else:
         # assumed to be some Unix/Linux system
+        possible_dll_names.append(BOTAN_BINARY_DIR_LINUX)
         possible_dll_names.append('libbotan-2-ubuntu-64.so')
         possible_dll_names += ['libbotan-2-ubuntu-64.so.%d' % (v) for v in reversed(range(13, 20))]
 

@@ -1,7 +1,9 @@
 # avoid uploading keys
 key/*
+!key/.gitkeep
 
 venv
 
 .idea
 
+\__pycache__
