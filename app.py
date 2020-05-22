@@ -1,4 +1,6 @@
 import json
+import os
+from pathlib import Path
 
 from modules.keymanager import KeyManager
 from modules.utils import package_ocmf_message
@@ -6,6 +8,8 @@ from modules.utils import package_ocmf_message
 algorithm = 'ecdsa'
 algorithm_params = 'secp256k1'
 hash_func = 'EMSA1(SHA-256)'
+
+METER_SAMPLE_DIR = os.path.join(Path(__file__), 'meter_value_sample.json')
 
 
 def main():
