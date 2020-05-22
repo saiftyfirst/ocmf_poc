@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from botan import botan2 as bt
+from thirdparty import botan2 as bt
 
 PRIVATE_KEY_DIR = os.path.join(Path(__file__).parent.parent, 'key/private-key.pem')
 PUBLIC_KEY_PKCS8_DIR = os.path.join(Path(__file__).parent.parent, 'key/private-key-pkcs8.pem')
