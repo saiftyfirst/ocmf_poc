@@ -20,9 +20,12 @@ def main():
 
     algo_n_hash = algorithm.upper() + '-' + algorithm_params + '-' + hash_func[6:-1].replace('-', '')
 
-    print('Use the following to test against the Transparency software: ')
-    print('public_key: ', key_manager.get_public_key_as_hex())
-    print('ocmf messgae: ', package_ocmf_message(msg, algo_n_hash, signature.hex()))
+    print('Use the following to test against the Transparency software: ', '\n')
+    print('public_key: ', key_manager.get_public_key_as_hex(), '\n')
+    print('ocmf messgae: ', package_ocmf_message(msg, algo_n_hash, signature.hex()), '\n')
+
+    input('Press any button to exit...')
+
 
 
 if __name__ == '__main__':
