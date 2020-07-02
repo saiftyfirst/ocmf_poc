@@ -1,4 +1,4 @@
-base_string = 'OCMF|<meter_value>|{"SA":"<algo_n_hash>","SD":"<signature>"}'
+base_string = 'OCMF|<meter_value>|{"SA":"<algo_n_hash>","SD":"<signature>","SE":"base64"}'
 
 
 def package_ocmf_message(msg, algo_n_hash, signature):

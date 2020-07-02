@@ -38,3 +38,6 @@ class KeyManager:
 
     def get_public_key_as_hex(self):
         return self._key.get_public_key().to_der().hex()
+
+    def get_public_key_as_pem(self):
+        return self._key.get_public_key().to_pem()[26:-25]
